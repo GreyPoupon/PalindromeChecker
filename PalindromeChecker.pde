@@ -16,7 +16,21 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+  String checker = "";
+  String tester1 = "";
+  String tester2 = "";
+  for(int i = 0; i < word.length(); i++)
+  {
+    if(Character.isLetter(word.charAt(i)))
+      checker = checker + word.charAt(i);
+  }
+  for(int i = 0; i < checker.length()/2; i++)
+  {
+    tester1 = tester1 + checker.charAt(i);
+    tester2 = tester2 + checker.charAt(checker.length()-1-i);
+  }
+  if(tester1.equalsIgnoreCase(tester2))
+    return true;
   return false;
 }
 
